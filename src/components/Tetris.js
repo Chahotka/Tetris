@@ -1,13 +1,12 @@
 import React from 'react'
 import Stage from './Tetris/Stage'
-import Display from './Tetris/Display'
-import StartButton from './Tetris/StartButton'
 import { createStage } from '../gameHelpers'
 import '../styles/tetris.scss'
+import Aside from './Aside'
 
 function Tetris() {
   return (
-    <>
+    <div className='tetris'>
       <main className="main">
         <div className="main__container">
           <div className="main__body">
@@ -15,13 +14,8 @@ function Tetris() {
           </div>
         </div>
       </main>
-      <aside className='aside'>
-        <Display text='Score'/>
-        <Display text='Lines'/>
-        <Display text='Level'/>
-        <StartButton />
-      </aside>
-    </>
+      <Aside />
+    </div>
   )
 }
 
