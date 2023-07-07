@@ -3,19 +3,14 @@ import { TETROMINOS } from '../../tetrominos'
 import '../../styles/stage-cell.scss'
 
 function Cell({ type }) {
-  const color = TETROMINOS['L'].color
+  const color = TETROMINOS[type].color
 
-  console.log(color)
-
+  // последняя остановка useStage разобраться как рендеряться ячейки
   return (
     <li
       style={{
-        background: `rgba(${color}, 0.8)`,
-        border: type === 0 ? '0px solid' : '4px solid',
-        borderRightColor: `rgba(${color}, 1)`,
-        borderLeftColor: `rgba(${color}, 0.3)`,
-        borderTopColor: `rgba(${color}, 1)`,
-        borderBottomColor: `rgba(${color}, 0.1)`
+        background: color === '0, 0, 0' ? `rgba(${color}, 0.5)` : `rgba(${color}, 1)`,
+        border: type === 0 ? `1px solid #ffffff71` : `4px solid ${color}`,
       }}
       className='stage__cell'
     >
