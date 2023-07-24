@@ -12,12 +12,10 @@
 
   &__list {
     display: grid;
-    grid-gap: 1px;
     align-items: center;
     justify-content: center;
-    grid-template-rows: repeat(20, 35px);
-    grid-template-columns: repeat(12, 35px);
-    border: 1px solid #fff;
+    grid-template-rows: repeat(20, 25px);
+    grid-template-columns: repeat(12, 25px);
   }
 
   &__cell {

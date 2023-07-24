@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import kanye from '../../images/EbanutiiRobloebKot.jpg'
+import kanye from '../../images/Loose-background.jpg'
 
 function Background() {
   const [image, setImage] = useState(kanye)
