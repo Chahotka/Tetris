@@ -18,7 +18,6 @@ export const checkCollision = (player, stage, { x: moveX, y: moveY}) => {
           !stage[y + player.pos.y + moveY][x + player.pos.x + moveX] ||
           // Проверка что в ячейку в которую перехожу не стоит 'clear'
           stage[y + player.pos.y + moveY][x + player.pos.x + moveX][1] !== 'clear'
-
         ) {
           return true
         }

@@ -5,6 +5,7 @@ import { createStage, checkCollision } from '../gameHelpers'
 import Aside from './Aside'
 import usePlayer from '../hooks/usePlayer'
 import useStage from '../hooks/useStage'
+import { useInterval } from '../hooks/useInterval'
 
 
 function Tetris() {
@@ -12,8 +13,8 @@ function Tetris() {
   const [dropTime, setDropTime] = useState(null)
   const [gameOver, setGameOver] = useState(false)
 
-  const { player, updatePlayerPos, resetPlayer } = usePlayer()
-  const { stage, setStage } = useStage(player)
+  const { player, updatePlayerPos, resetPlayer, playerRotate } = usePlayer()
+  const { stage, setStage } = useStage(player, resetPlayer)
 
 
   const movePlayer = dir => {
@@ -23,7 +24,10 @@ function Tetris() {
   }
 
   const startGame = () => {
+    console.log('test')
+
     setStage(createStage());
+    setDropTime(1000)
     resetPlayer()
     setGameOver(false)
   }
@@ -33,15 +37,24 @@ function Tetris() {
       updatePlayerPos({ x: 0, y: 1, collided: false })
     } else {
       if (player.pos.y < 1) {
+        console.log('Game over')
         setGameOver(true)
         setDropTime(null)
       }
+      updatePlayerPos({ x: 0, y: 0, collided: true})
+    }
+  }
 
-      updatePlayerPos({ x: 0, y: 0, collided: true })
+  const keyUp = ({ keyCode }) => {
+    if (!gameOver) {
+      if (keyCode === 40) {
+        setDropTime(1000)
+      }
     }
   }
 
   const dropPlayer = () => {
+    setDropTime(null)
     drop()
   }
 
@@ -53,16 +66,23 @@ function Tetris() {
         movePlayer(1)
       } else if (keyCode === 40) {
         dropPlayer()
+      } else if (keyCode === 38) {
+        playerRotate(stage, 1)
       }
     }
   }
 
+  useInterval(() => {
+    drop()
+  }, dropTime)
 
   console.log('re-render')
   return (
     <div 
+      tabIndex={0}
       className='tetris' 
       role='button'
+      onKeyUp={e => keyUp(e)}
       onKeyDown={e => move(e)}
     >
       <main className="main">
