@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { TETROMINOS } from '../../tetrominos'
 
 function Cell({ type }) {
   const color = TETROMINOS[type].color
 
+  console.log('rerender')
   return (
     <li
       style={{
@@ -16,4 +17,4 @@ function Cell({ type }) {
   )
 }
 
-export default Cell
+export default memo(Cell)
