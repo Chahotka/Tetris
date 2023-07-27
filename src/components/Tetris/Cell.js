@@ -4,7 +4,7 @@ import { TETROMINOS } from '../../tetrominos'
 function Cell({ type }) {
   const color = TETROMINOS[type].color
 
-  console.log('rerender')
+  
   return (
     <li
       style={{

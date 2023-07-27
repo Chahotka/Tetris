@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../styles/tetris.scss'
 import Stage from './Tetris/Stage'
 import { createStage, checkCollision } from '../gameHelpers'
@@ -10,13 +10,11 @@ import useGameStatus from '../hooks/useGameStatus'
 
 
 function Tetris() {
-  // не работает resetPlayer надо починить
   const [dropTime, setDropTime] = useState(null)
   const [gameOver, setGameOver] = useState(false)
 
   const { player, updatePlayerPos, resetPlayer, playerRotate } = usePlayer()
   const { stage, setStage, rowsCleared } = useStage(player, resetPlayer)
-  console.log(rowsCleared)
   const {score, setScore, rows, setRows, level, setLevel} = useGameStatus(rowsCleared)
 
 
@@ -27,8 +25,6 @@ function Tetris() {
   }
 
   const startGame = () => {
-    console.log('test')
-
     setStage(createStage());
     setDropTime(1000)
     resetPlayer()
@@ -86,7 +82,7 @@ function Tetris() {
     drop()
   }, dropTime)
 
-  console.log('re-render')
+
   return (
     <div 
       tabIndex={0}
