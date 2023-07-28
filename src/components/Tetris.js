@@ -7,12 +7,14 @@ import usePlayer from '../hooks/usePlayer'
 import useStage from '../hooks/useStage'
 import { useInterval } from '../hooks/useInterval'
 import useGameStatus from '../hooks/useGameStatus'
+import useAudio from '../hooks/useAudio'
 
 
 function Tetris() {
   const [dropTime, setDropTime] = useState(null)
   const [gameOver, setGameOver] = useState(false)
 
+  const { dispatch } = useAudio()
   const { player, updatePlayerPos, resetPlayer, playerRotate } = usePlayer()
   const { stage, setStage, rowsCleared } = useStage(player, resetPlayer)
   const {score, setScore, rows, setRows, level, setLevel} = useGameStatus(rowsCleared)
@@ -25,6 +27,9 @@ function Tetris() {
   }
 
   const startGame = () => {
+    dispatch({
+      type: 'GAMESTART',
+    })
     setStage(createStage());
     setDropTime(1000)
     resetPlayer()
@@ -43,9 +48,11 @@ function Tetris() {
       updatePlayerPos({ x: 0, y: 1, collided: false })
     } else {
       if (player.pos.y < 1) {
-        console.log('Game over')
         setGameOver(true)
         setDropTime(null)
+        dispatch({
+          type: 'GAMEOVER'
+        })
       }
       updatePlayerPos({ x: 0, y: 0, collided: true})
     }
