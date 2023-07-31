@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import '../styles/tetris.scss'
 import Stage from './Tetris/Stage'
 import { createStage, checkCollision } from '../gameHelpers'
@@ -7,14 +7,14 @@ import usePlayer from '../hooks/usePlayer'
 import useStage from '../hooks/useStage'
 import { useInterval } from '../hooks/useInterval'
 import useGameStatus from '../hooks/useGameStatus'
-import useAudio from '../hooks/useAudio'
+import { MediaContext } from '../context/MediaContext'
 
 
 function Tetris() {
+  const { image, dispatch} = useContext(MediaContext)
   const [dropTime, setDropTime] = useState(null)
   const [gameOver, setGameOver] = useState(false)
 
-  const { dispatch } = useAudio()
   const { player, updatePlayerPos, resetPlayer, playerRotate } = usePlayer()
   const { stage, setStage, rowsCleared } = useStage(player, resetPlayer, dispatch)
   const {score, setScore, rows, setRows, level, setLevel} = useGameStatus(rowsCleared, dispatch)
@@ -29,6 +29,9 @@ function Tetris() {
   const startGame = () => {
     dispatch({
       type: 'GAMESTART',
+    })
+    dispatch({
+      type: 'STAGE_1'
     })
     setStage(createStage());
     setDropTime(1000)
