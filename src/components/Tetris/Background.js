@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-import kanye from '../../images/Loose-background.jpg'
+import React, { useContext, useState } from 'react'
+import { MediaContext } from '../../context/MediaContext'
 
 function Background() {
-  const [image, setImage] = useState(kanye)
+  const { image } = useContext(MediaContext)
 
   return (
     <img 

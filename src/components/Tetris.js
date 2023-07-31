@@ -11,7 +11,7 @@ import { MediaContext } from '../context/MediaContext'
 
 
 function Tetris() {
-  const { image, dispatch} = useContext(MediaContext)
+  const { dispatch} = useContext(MediaContext)
   const [dropTime, setDropTime] = useState(null)
   const [gameOver, setGameOver] = useState(false)
 

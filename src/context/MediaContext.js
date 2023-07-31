@@ -9,7 +9,8 @@ import row2 from '../audio/2rows-stack.mp3'
 import row3 from '../audio/3rows-stack.mp3'
 import row4 from '../audio/4rows-stack.mp3'
 
-// Есть вариант попробовать useReducer
+
+// Добавить при collide смену фото
 
 const MediaReducer = (state, action) => {
   switch(action.type) {
@@ -39,7 +40,8 @@ const MediaReducer = (state, action) => {
       state.audio.collide.volume = 0.6
       state.audio.collide.play()
       return state
-    case 'STAGE_1': 
+    case 'STAGE_1':
+      state.audio.stage1.play()
       return state
 
     case 'STACK_1':
