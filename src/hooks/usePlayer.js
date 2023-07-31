@@ -11,13 +11,10 @@ function usePlayer() {
 
   const rotate = (matrix, dir) => {
     // Делает ряды колоннами
-    console.log(matrix)
     const rotatedTetro = matrix.map((_, index) => {
       return matrix.map(col => col[index])
     })
-
-    console.log(rotatedTetro)
-
+    
     // Переворачивает ряды в обратном порядке
     if (dir > 0) {
       return rotatedTetro.map(row => row.reverse())
@@ -70,7 +67,6 @@ function usePlayer() {
     })
   }, [])
 
-  // resetPlayer ебет мозгу и по какой-то причине не работает
 
   return { player, updatePlayerPos, resetPlayer, playerRotate }
 }

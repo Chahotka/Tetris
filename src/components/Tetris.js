@@ -16,8 +16,8 @@ function Tetris() {
 
   const { dispatch } = useAudio()
   const { player, updatePlayerPos, resetPlayer, playerRotate } = usePlayer()
-  const { stage, setStage, rowsCleared } = useStage(player, resetPlayer)
-  const {score, setScore, rows, setRows, level, setLevel} = useGameStatus(rowsCleared)
+  const { stage, setStage, rowsCleared } = useStage(player, resetPlayer, dispatch)
+  const {score, setScore, rows, setRows, level, setLevel} = useGameStatus(rowsCleared, dispatch)
 
 
   const movePlayer = dir => {
