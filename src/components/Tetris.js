@@ -11,14 +11,22 @@ import { MediaContext } from '../context/MediaContext'
 
 
 function Tetris() {
-  const { dispatch} = useContext(MediaContext)
+  const { dispatch } = useContext(MediaContext)
   const [dropTime, setDropTime] = useState(null)
   const [gameOver, setGameOver] = useState(false)
 
   const { player, updatePlayerPos, resetPlayer, playerRotate } = usePlayer()
-  const { stage, setStage, rowsCleared } = useStage(player, resetPlayer, dispatch)
-  const {score, setScore, rows, setRows, level, setLevel} = useGameStatus(rowsCleared, dispatch)
+  const { stage, setStage, rowsCleared } = useStage(player, resetPlayer)
+  const { score, setScore, rows, setRows, level, setLevel} = useGameStatus(rowsCleared, dispatch)
 
+  useEffect(() => {
+    if (player.collided) {
+      console.log('wha')
+      dispatch({
+        type: 'COLLIDE'
+      })
+    }
+  }, [player.collided])
 
   const movePlayer = dir => {
     if (!checkCollision(player, stage, { x: dir, y: 0 })) {

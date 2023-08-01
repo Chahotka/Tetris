@@ -37,9 +37,6 @@ function useStage(player, resetPlayer, dispatch) {
       })
       if (player.collided) {
         resetPlayer()
-        dispatch({
-          type: 'COLLIDE'
-        })
         return sweepRows(newStage)
       }
 

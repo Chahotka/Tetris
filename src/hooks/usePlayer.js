@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react'
 import { TETROMINOS, randomTetromino } from '../tetrominos'
 import { STAGE_WIDTH, checkCollision } from '../gameHelpers'
 
-function usePlayer() {
+function usePlayer(dispatch) {
   const [player, setPlayer] = useState({
     pos: { x: 0, y: 0 },
     tetromino: TETROMINOS[0].shape,
