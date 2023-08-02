@@ -31,13 +31,15 @@ import row2 from '../audio/2rows-stack.mp3'
 import row3 from '../audio/3rows-stack.mp3'
 import row4 from '../audio/4rows-stack.mp3'
 
-
+let i = 0
 const collideImages = [
   stackImage1, stackImage2, stackImage3, stackImage4,
   stackImage5, stackImage6, stackImage7, stackImage8,
   stackImage9, stackImage10, stackImage11, stackImage12,
   stackImage13, stackImage14, stackImage15, stackImage16
 ]
+
+// убрать задержку у смены картинок
 
 const MediaReducer = (state, action) => {
   switch(action.type) {
@@ -61,22 +63,22 @@ const MediaReducer = (state, action) => {
       return state
 
     case 'COLLIDE':
-      const randomImg = collideImages[Math.floor(Math.random() * collideImages.length)]
-
-      if (!state.audio.collide.paused) {
-        state.audio.collide.currentTime = 0
+      if (state.imageIndex + 1 > collideImages.length - 1) {
+        state.imageIndex = 0
       }
-      state.audio.collide.volume = 0.6
-      state.audio.collide.play()
+
+      if (action.collided) {
+        state.audio.collide.volume = 0.6
+        state.audio.collide.play()
+        state.collideImage = collideImages[i]
+        i++
+      }
+
 
       return {
         ...state,
-        collideImage: randomImg
+        collided: action.collided
       }
-
-    case 'STAGE_1':
-      state.audio.stage1.play()
-      return state
 
     case 'STACK_1':
       state.audio.stack1.play()
@@ -111,7 +113,8 @@ const initialState = {
     stack4: new Audio(row4)
   },
   stateImage: stageImage1,
-  collideImage: null,
+  collideImage: collideImages[i],
+  collided: false
 }
 
 export const MediaContext = createContext()
@@ -124,6 +127,7 @@ export const MediaProvider = (props) => {
       value={{
         stageImg: state.stateImage,
         collideImg: state.collideImage,
+        collided: state.collided,
         dispatch
       }}
     >

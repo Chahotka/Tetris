@@ -5,6 +5,7 @@ import Background from './Background'
 import CollideBackground from './CollideBackground'
 
 function Stage({ stage }) {
+
   return (
     <section className='stage'>
     <Background />

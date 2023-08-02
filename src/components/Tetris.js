@@ -20,12 +20,10 @@ function Tetris() {
   const { score, setScore, rows, setRows, level, setLevel} = useGameStatus(rowsCleared, dispatch)
 
   useEffect(() => {
-    if (player.collided) {
-      console.log('wha')
-      dispatch({
-        type: 'COLLIDE'
-      })
-    }
+    dispatch({
+      type: 'COLLIDE',
+      collided: player.collided
+    })
   }, [player.collided])
 
   const movePlayer = dir => {

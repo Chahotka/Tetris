@@ -8,7 +8,7 @@ function Cell({ type }) {
   return (
     <li
       style={{
-        background: color === '0, 0, 0' ? `rgba(${color}, 0.5)` : `rgba(${color}, 1)`,
+        background: color === '0, 0, 0' ? `rgba(${color}, 0.3)` : `rgba(${color}, 1)`,
         border: type === 0 ? `1px solid #ffffff22` : `3px solid rgba(0, 0, 0, 0.1)`,
       }}
       className='stage__cell'
