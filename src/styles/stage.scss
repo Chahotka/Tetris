@@ -15,9 +15,10 @@
     height: 100%;
     position: absolute;
     opacity: 0;
-    transition: 0.2s ease-in;
+    transition: 0.5s all;
 
     z-index: -1;
+
     &_show {
       opacity: 1;
     }

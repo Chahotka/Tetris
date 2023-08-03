@@ -4,23 +4,6 @@ import React, { createContext, useReducer } from 'react'
 import stageImage1 from '../images/Kanye-background.jpg'
 
 // Collide images
-import stackImage1 from '../images/stack/stack1.jpg'
-import stackImage2 from '../images/stack/stack2.jpg'
-import stackImage3 from '../images/stack/stack3.jpg'
-import stackImage4 from '../images/stack/stack4.jpg'
-import stackImage5 from '../images/stack/stack5.jpg'
-import stackImage6 from '../images/stack/stack6.jpg'
-import stackImage7 from '../images/stack/stack7.jpg'
-import stackImage8 from '../images/stack/stack8.jpg'
-import stackImage9 from '../images/stack/stack9.jpg'
-import stackImage10 from '../images/stack/stack10.jpg'
-import stackImage11 from '../images/stack/stack11.jpg'
-import stackImage12 from '../images/stack/stack12.jpg'
-import stackImage13 from '../images/stack/stack13.jpg'
-import stackImage14 from '../images/stack/stack14.jpg'
-import stackImage15 from '../images/stack/stack15.jpg'
-import stackImage16 from '../images/stack/stack16.jpg'
-
 // Audios
 import phonk from '../audio/Bg-audio.mp3'
 import loose from '../audio/loose-audio.mp3'
@@ -31,15 +14,7 @@ import row2 from '../audio/2rows-stack.mp3'
 import row3 from '../audio/3rows-stack.mp3'
 import row4 from '../audio/4rows-stack.mp3'
 
-let i = 0
-const collideImages = [
-  stackImage1, stackImage2, stackImage3, stackImage4,
-  stackImage5, stackImage6, stackImage7, stackImage8,
-  stackImage9, stackImage10, stackImage11, stackImage12,
-  stackImage13, stackImage14, stackImage15, stackImage16
-]
 
-// убрать задержку у смены картинок
 
 const MediaReducer = (state, action) => {
   switch(action.type) {
@@ -63,15 +38,12 @@ const MediaReducer = (state, action) => {
       return state
 
     case 'COLLIDE':
-      if (state.imageIndex + 1 > collideImages.length - 1) {
-        state.imageIndex = 0
-      }
-
       if (action.collided) {
+        if (state.audio.collide) {
+          state.audio.collide.currentTime = 0
+        }
         state.audio.collide.volume = 0.6
         state.audio.collide.play()
-        state.collideImage = collideImages[i]
-        i++
       }
 
 
@@ -113,7 +85,6 @@ const initialState = {
     stack4: new Audio(row4)
   },
   stateImage: stageImage1,
-  collideImage: collideImages[i],
   collided: false
 }
 
@@ -126,7 +97,6 @@ export const MediaProvider = (props) => {
     <MediaContext.Provider
       value={{
         stageImg: state.stateImage,
-        collideImg: state.collideImage,
         collided: state.collided,
         dispatch
       }}
