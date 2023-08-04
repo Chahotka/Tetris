@@ -3,6 +3,7 @@ import Cell from './Cell'
 import '../../styles/stage.scss'
 import Background from './Background'
 import CollideBackground from './CollideBackground'
+import StackBackground from './StackBackground'
 
 function Stage({ stage }) {
 
@@ -10,6 +11,7 @@ function Stage({ stage }) {
     <section className='stage'>
     <Background />
     <CollideBackground />
+    <StackBackground />
       <ul className="stage__list">
         {
           stage.map(row =>

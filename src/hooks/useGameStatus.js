@@ -11,7 +11,8 @@ function useGameStatus(rowsCleared, dispatch) {
   const calcScore = useCallback(() => {
     if (rowsCleared > 0) {
       dispatch({
-        type: `STACK_${rowsCleared}`
+        type: `STACK_${rowsCleared}`,
+        stack: rowsCleared
       })
       setScore(prev => prev + linePoints[rowsCleared - 1] * (level + 1))
       setRows(prev => prev + rowsCleared)
