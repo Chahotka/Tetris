@@ -28,7 +28,7 @@ const collideImages = [
 
 function CollideBackground() {
   const [show, setShow] = useState(false)
-  const [index, setIndex] = useState(0)
+  const [index, setIndex] = useState(15)
   const [image, setImage] = useState(collideImages[index])
   const { collided } = useContext(MediaContext)
 
@@ -37,8 +37,7 @@ function CollideBackground() {
       if(show) {
         setShow(false)
       }
-      console.log('wha')
-      if (index > collideImages.length - 1) {
+      if (index === collideImages.length - 1) {
         setIndex(0)
       }
       setShow(true)
