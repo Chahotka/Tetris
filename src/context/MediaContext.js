@@ -78,6 +78,12 @@ const MediaReducer = (state, action) => {
         stack: action.stack
       }
 
+    case 'CLEAR_STACK':
+      return {
+        ...state,
+        stack: 0
+      }
+
     default:
       return state
   }

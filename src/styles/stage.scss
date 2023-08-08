@@ -24,6 +24,14 @@
   }
 
   &__stack {
+    &-vid {
+      opacity: 1;
+      transition: all 0.3s;
+
+      &_end {
+        opacity: 0;
+      }
+    }
     &-container {
       position: absolute;
       top: 0;
