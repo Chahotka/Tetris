@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/Tetris/static/css/main.7fb5ede4.css",
+    "main.js": "/Tetris/static/js/main.2877a6d2.js",
+    "static/media/4rows-stack-vid.mp4": "/Tetris/static/media/4rows-stack-vid.9e7b272561a263419f20.mp4",
+    "static/media/3rows-stack-vid.mp4": "/Tetris/static/media/3rows-stack-vid.922c68da145ab0961cc1.mp4",
+    "static/media/2rows-stack-vid.mp4": "/Tetris/static/media/2rows-stack-vid.5cac77ae6a8839099cc1.mp4",
+    "static/media/Bg-audio.mp3": "/Tetris/static/media/Bg-audio.c6d09022fd8e6525cd99.mp3",
+    "static/media/loose-audio.mp3": "/Tetris/static/media/loose-audio.cfd4a0491d52110973c5.mp3",
+    "static/media/3rows-stack.mp3": "/Tetris/static/media/3rows-stack.3bb983ab782371b042c9.mp3",
+    "static/media/1rows-stack-vid.mp4": "/Tetris/static/media/1rows-stack-vid.a9aab431a414f3c887d9.mp4",
+    "static/media/4rows-stack.mp3": "/Tetris/static/media/4rows-stack.b3f28e961407be436c04.mp3",
+    "static/media/stack7.jpg": "/Tetris/static/media/stack7.7234c13e87224b4c3c4c.jpg",
+    "static/media/stack16.jpg": "/Tetris/static/media/stack16.c3ccd74c3ddd8a768076.jpg",
+    "static/media/stack8.jpg": "/Tetris/static/media/stack8.d934c9f8c1b6117762a1.jpg",
+    "static/media/stack13.jpg": "/Tetris/static/media/stack13.db373f2f71120c9fb095.jpg",
+    "static/media/stack2.jpg": "/Tetris/static/media/stack2.cb3af631dbcab3233b93.jpg",
+    "static/media/stack3.jpg": "/Tetris/static/media/stack3.e0671c6e1b19c6fc08fd.jpg",
+    "static/media/1row-stack.mp3": "/Tetris/static/media/1row-stack.a19cadcd3775a63c4d6a.mp3",
+    "static/media/stack12.jpg": "/Tetris/static/media/stack12.231c5e5282b496d1828f.jpg",
+    "static/media/stack6.jpg": "/Tetris/static/media/stack6.57b85206e25aa8296a49.jpg",
+    "static/media/stack9.jpg": "/Tetris/static/media/stack9.568f08f151b67d1a5705.jpg",
+    "static/media/stack15.jpg": "/Tetris/static/media/stack15.d4c9614ea3e82c60602e.jpg",
+    "static/media/stack10.jpg": "/Tetris/static/media/stack10.6888530a30cdcd4f1e26.jpg",
+    "static/media/Kanye-background.jpg": "/Tetris/static/media/Kanye-background.6cd33ac8f0fb79cf85db.jpg",
+    "static/media/stack1.jpg": "/Tetris/static/media/stack1.a7fe6145f051b2cfa41e.jpg",
+    "static/media/stack5.jpg": "/Tetris/static/media/stack5.af36aa70b8bded9edee6.jpg",
+    "static/media/stack11.jpg": "/Tetris/static/media/stack11.d79f135f9bfbb07e4af2.jpg",
+    "static/media/stack4.jpg": "/Tetris/static/media/stack4.b8f891ede1c6a56a6ed9.jpg",
+    "static/media/stack-sound.mp3": "/Tetris/static/media/stack-sound.f0872139a5114016a2e5.mp3",
+    "static/media/stack14.jpg": "/Tetris/static/media/stack14.8113b52d153d9458ff48.jpg",
+    "static/media/2rows-stack.mp3": "/Tetris/static/media/2rows-stack.06c09443b218923cdc0b.mp3",
+    "index.html": "/Tetris/index.html",
+    "main.7fb5ede4.css.map": "/Tetris/static/css/main.7fb5ede4.css.map",
+    "main.2877a6d2.js.map": "/Tetris/static/js/main.2877a6d2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7fb5ede4.css",
+    "static/js/main.2877a6d2.js"
+  ]
+}
