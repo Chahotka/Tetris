@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Tetris/static/css/main.47b4a545.css",
-    "main.js": "/Tetris/static/js/main.a4ff7197.js",
+    "main.css": "/Tetris/static/css/main.c49248a7.css",
+    "main.js": "/Tetris/static/js/main.72ac9641.js",
     "static/media/4rows-stack-vid.mp4": "/Tetris/static/media/4rows-stack-vid.9e7b272561a263419f20.mp4",
     "static/media/3rows-stack-vid.mp4": "/Tetris/static/media/3rows-stack-vid.922c68da145ab0961cc1.mp4",
     "static/media/2rows-stack-vid.mp4": "/Tetris/static/media/2rows-stack-vid.5cac77ae6a8839099cc1.mp4",
@@ -31,11 +31,11 @@
     "static/media/stack14.jpg": "/Tetris/static/media/stack14.8113b52d153d9458ff48.jpg",
     "static/media/2rows-stack.mp3": "/Tetris/static/media/2rows-stack.06c09443b218923cdc0b.mp3",
     "index.html": "/Tetris/index.html",
-    "main.47b4a545.css.map": "/Tetris/static/css/main.47b4a545.css.map",
-    "main.a4ff7197.js.map": "/Tetris/static/js/main.a4ff7197.js.map"
+    "main.c49248a7.css.map": "/Tetris/static/css/main.c49248a7.css.map",
+    "main.72ac9641.js.map": "/Tetris/static/js/main.72ac9641.js.map"
   },
   "entrypoints": [
-    "static/css/main.47b4a545.css",
-    "static/js/main.a4ff7197.js"
+    "static/css/main.c49248a7.css",
+    "static/js/main.72ac9641.js"
   ]
 }
