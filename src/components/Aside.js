@@ -7,9 +7,14 @@ function Aside({ gameOver, startGame, score, rows, level }) {
 
   return (
     <aside className='aside'>
-      { gameOver ? 
-        <Display text='Game Over'/> 
-        :<>
+      { gameOver 
+        ? 
+        <>
+          <Display text='Game Over'/> 
+          <Display text={`Score: ${score}`}/> 
+        </>
+        :
+        <>
           <Display text={`Score: ${score}`}/>
           <Display text={`Rows: ${rows}`}/>
           <Display text={`Level: ${level}`}/>
