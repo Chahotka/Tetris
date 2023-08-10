@@ -55,8 +55,8 @@
     display: grid;
     align-items: center;
     justify-content: center;
-    grid-template-rows: repeat(20, 25px);
-    grid-template-columns: repeat(12, 25px);
+    grid-template-rows: repeat(20, 40px);
+    grid-template-columns: repeat(12, 40px);
   }
 
   &__cell {
